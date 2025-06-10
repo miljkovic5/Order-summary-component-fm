@@ -11,6 +11,8 @@
   --color-desat-blue: hsl(224, 23%, 55%);
   --color-dark-blue: hsl(223, 47%, 23%);
   --color-hover-blue: hsl(245, 83%, 68%);
+  --color-box-shadow: hsla(228, 87%, 39%, 15.18%);
+  --color-box-shadow-button: hsla(245, 75%, 52%, 19.03%);
 
   /* Typography */
   --ff-base: "Red Hat Display", sans-serif;
@@ -30,6 +32,7 @@
   --size-1: 0.0625rem; /* 1px */
 
   /* Spacing */
+  --space-6: 0.375rem; /* 6px */
   --space-15: 0.9375rem; /* 15px */
   --space-16: 1rem; /* 16px */
   --space-17: 1.0625rem; /* 17px */
@@ -86,8 +89,10 @@ img {
 }
 
 .card {
-  border-radius: var(--radius-20);
   background-color: var(--color-white);
+  border-radius: var(--radius-20);
+  box-shadow: 0 2.5rem 2.5rem -1.25rem var(--color-box-shadow);
+
   width: 20.4375rem;
 }
 
@@ -130,6 +135,7 @@ img {
   a {
     font-size: var(--fs-14);
     color: var(--color-bright-blue);
+    font-weight: var(--fw-bold);
 
     &:hover,
     &:focus,
@@ -151,6 +157,7 @@ img {
   color: var(--color-dark-blue);
   font-weight: var(--fw-black);
   font-size: var(--fs-16);
+  margin-block-end: var(--space-6);
 }
 
 .card__plan-details {
@@ -161,19 +168,20 @@ img {
 .card__proceed-button {
   background-color: var(--color-bright-blue);
   border-radius: var(--radius-11);
+  border: none;
   color: var(--color-white);
-  font-weight: var(--fw-black);
+  cursor: pointer;
   font-size: var(--fs-15);
+  font-weight: var(--fw-black);
   padding: var(--space-15);
   text-align: center;
   width: 100%;
-  border: none;
-  cursor: pointer;
   margin-block-end: clamp(
     var(--space-24),
     1.3239rem + 0.7512vw,
     var(--space-32)
   );
+  box-shadow: 0 1.25rem 1.25rem 0 var(--color-box-shadow-button);
 
   &:hover {
     background-color: var(--color-hover-blue);
@@ -184,16 +192,16 @@ img {
   background-color: transparent;
   border: none;
   color: var(--color-desat-blue);
-  font-weight: var(--fw-black);
-  font-size: var(--fs-15);
-  text-align: center;
-  width: 100%;
   cursor: pointer;
   display: block;
+  font-size: var(--fs-15);
+  font-weight: var(--fw-black);
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
 
   &:hover {
     color: var(--color-dark-blue);
-    text-decoration: none;
   }
 }
 
